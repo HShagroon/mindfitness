@@ -8,23 +8,23 @@
 import Foundation
 
 class LevelModel: ObservableObject {
-    let id: UUID
+    let id: Int
     let name: String
-    let index: Int
-    let time: TimeInterval
-    let sessions:[SessionModel]
-    @Published var isUnlocked: Bool // Assuming status is a string, you can adjust the type as needed
-    // Other properties and methods related to the level
+    @Published var sessions: [SessionModel]
 
-    init(id: UUID, name: String, index: Int, time: TimeInterval, sessions: [SessionModel], isUnlocked: Bool) {
+    init(id: Int, name: String, sessions: [SessionModel]) {
         self.id = id
         self.name = name
-        self.index = index
-        self.time = time
         self.sessions = sessions
-        self.isUnlocked = isUnlocked
     }
 }
+
+   /* @Published var isUnlocked: Bool*/ // Assuming status is a string, you can adjust the type as needed
+    // Other properties and methods related to the level
+
+
+//        self.isUnlocked = isUnlocked
+   
 
 
 

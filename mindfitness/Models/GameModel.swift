@@ -4,35 +4,36 @@
 //
 //  Created by Haneen Rida Shagroon on 04/07/1445 AH.
 //
-
+import SwiftUI
 import Foundation
-struct GameModel: Identifiable {
+class GameModel: Identifiable {
     let id: Int
-    var name: String
-    var image: String
-    var levels: [LevelModel]
-    var currentLevelIndex: Int
+    let name: String
+    let type: String
+    let image: String
+    var isLocked: Bool
+    let destinationView: (() -> AnyView)
+    
+    init(id: Int, name: String, type: String, image: String, isLocked: Bool, destinationView: (@escaping () -> AnyView)) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.image = image
+        self.isLocked = isLocked
+        self.destinationView = destinationView
+    }
+}
+
+
+
     //    let destinationView: () -> AnyView
     
     
     
     
-    init(id: Int, name: String, image: String, levels: [LevelModel], currentLevelIndex: Int ) {
-        self.id = id
-        self.name = name
-        self.image = image
-        self.levels = levels
-        self.currentLevelIndex = currentLevelIndex
         //        self.destinationView = destinationView
-    }
-    
     
 
-}
-    
-    
-    
-    
     
 //    init(id: Int, name: String, image: String, destinationView: @escaping () -> AnyView) {
 //        self.id = id
